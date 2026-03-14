@@ -90,7 +90,9 @@ vim.keymap.set('n', 'gs', function()
       print("대응하는 헤더 파일(.h/.hpp)을 찾을 수 없습니다.")
     end
   end
-end)
+end,
+{ desc = '파일 확장자 반대 파일 점프' }
+)
 
 
 -- treesitter 에서 c, cpp 자동 indent 가 잘 안됨. 끄기 

@@ -5,31 +5,31 @@
 
 ## Normal Mode
 
-| 키           | 설명                     | 출처                     |
-| ------------ | ------------------------ | ------------------------ |
-| `-`          | netrw 열기               | init.lua                 |
-| `<leader>ff` | Telescope find files     | init.lua                 |
-| `<leader>fg` | Telescope live grep      | init.lua                 |
-| `<leader>fb` | Telescope buffers        | init.lua                 |
-| `<leader>fh` | Telescope help tags      | init.lua                 |
-| `<leader>e`  | —                        | init.lua                 |
-| `g>`         | 다음 진단으로            | init.lua                 |
-| `g<`         | 이전 진단으로            | init.lua                 |
-| `gs`         | —                        | init.lua                 |
-| `<leader>cc` | Copilot Chat 토글        | plugins/copilot-chat.lua |
-| `gd`         | 정의로 이동 (LSP)        | plugins/lsp.lua          |
-| `gr`         | 참조 목록 (LSP)          | plugins/lsp.lua          |
-| `K`          | 호버 정보 (LSP)          | plugins/lsp.lua          |
-| `<leader>rn` | 이름 변경 (LSP)          | plugins/lsp.lua          |
-| `gD`         | 선언으로 이동 (LSP)      | plugins/lsp.lua          |
-| `gl`         | 구현으로 이동 (LSP)      | plugins/lsp.lua          |
-| `gh`         | 시그니처 도움말 (LSP)    | plugins/lsp.lua          |
-| `<leader>gh` | —                        | plugins/lsp.lua          |
-| `<leader>tc` | Toggle TS Context        | plugins/treesitter.lua   |
-| `[x`         | Jump to context (upward) | plugins/treesitter.lua   |
-| `<leader>sp` | TS swap next param       | plugins/treesitter.lua   |
-| `<leader>sP` | TS swap prev param       | plugins/treesitter.lua   |
-| `<leader>u`  | —                        | plugins/undotree.lua     |
+| 키           | 설명                       | 출처                     |
+| ------------ | -------------------------- | ------------------------ |
+| `-`          | netrw 열기                 | init.lua                 |
+| `<leader>ff` | Telescope find files       | init.lua                 |
+| `<leader>fg` | Telescope live grep        | init.lua                 |
+| `<leader>fb` | Telescope buffers          | init.lua                 |
+| `<leader>fh` | Telescope help tags        | init.lua                 |
+| `<leader>e`  | —                          | init.lua                 |
+| `g>`         | 다음 진단으로              | init.lua                 |
+| `g<`         | 이전 진단으로              | init.lua                 |
+| `gs`         | 파일 확장자 반대 파일 점프 | init.lua                 |
+| `<leader>cc` | Copilot Chat 토글          | plugins/copilot-chat.lua |
+| `gd`         | 정의로 이동 (LSP)          | plugins/lsp.lua          |
+| `gr`         | 참조 목록 (LSP)            | plugins/lsp.lua          |
+| `K`          | 호버 정보 (LSP)            | plugins/lsp.lua          |
+| `<leader>rn` | 이름 변경 (LSP)            | plugins/lsp.lua          |
+| `gD`         | 선언으로 이동 (LSP)        | plugins/lsp.lua          |
+| `gl`         | 구현으로 이동 (LSP)        | plugins/lsp.lua          |
+| `gh`         | 시그니처 도움말 (LSP)      | plugins/lsp.lua          |
+| `<leader>gh` | —                          | plugins/lsp.lua          |
+| `<leader>tc` | Toggle TS Context          | plugins/treesitter.lua   |
+| `[x`         | Jump to context (upward)   | plugins/treesitter.lua   |
+| `<leader>sp` | TS swap next param         | plugins/treesitter.lua   |
+| `<leader>sP` | TS swap prev param         | plugins/treesitter.lua   |
+| `<leader>u`  | —                          | plugins/undotree.lua     |
 
 ## Insert Mode
 
