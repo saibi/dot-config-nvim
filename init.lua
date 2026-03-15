@@ -55,6 +55,10 @@ keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files
 keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+keymap.set('n', '<leader>fs', builtin.lsp_document_symbols, { desc = 'Telescope LSP document symbols' })
+keymap.set('n', '<leader>fS', builtin.lsp_workspace_symbols, { desc = 'Telescope LSP workspace symbols' })
+keymap.set('n', '<leader>ft', builtin.current_buffer_tags, { desc = 'Telescope current buffer tags' })
+keymap.set('n', '<leader>fT', builtin.tags, { desc = 'Telescope project tags' })
 
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
