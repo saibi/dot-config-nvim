@@ -228,6 +228,50 @@ def parse_copilot_suggestion(text: str, source: str) -> list:
     return results
 
 
+def parse_default_keymaps(text: str, source: str) -> list:
+    """-- [DEFAULT KEYMAPS] 주석 블록에서 플러그인 기본 키맵 파싱"""
+    MODE_MAP = {
+        "NORMAL": "Normal", "INSERT": "Insert", "VISUAL": "Visual",
+        "OPERATOR": "Operator", "COMMAND": "Command", "TERMINAL": "Terminal",
+        "SELECT": "Select",
+    }
+    results = []
+    in_section = False
+    current_mode = "Normal"
+
+    for line in text.splitlines():
+        stripped = line.strip()
+        if not stripped.startswith("--"):
+            continue
+
+        content = stripped[2:].strip()
+
+        if "[DEFAULT KEYMAPS]" in content:
+            in_section = True
+            continue
+
+        if not in_section:
+            continue
+
+        # 모드 헤더: "NORMAL mode", "VISUAL mode" 등
+        mode_m = re.match(r'^([A-Z]+)\s+mode', content)
+        if mode_m and mode_m.group(1) in MODE_MAP:
+            current_mode = MODE_MAP[mode_m.group(1)]
+            continue
+
+        # 키맵 엔트리: `key` - description
+        key_m = re.match(r'^`([^`]+)`\s*[-–]\s*(.+)', content)
+        if key_m:
+            results.append({
+                "mode": current_mode,
+                "key": key_m.group(1),
+                "desc": key_m.group(2).strip(),
+                "source": source,
+            })
+
+    return results
+
+
 # ── 마크다운 생성 ───────────────────────────────────────────────
 
 def generate(nvim_dir: Path, output: Path):
@@ -242,6 +286,7 @@ def generate(nvim_dir: Path, output: Path):
         for lua_file in sorted(plugins_dir.glob("*.lua")):
             text   = lua_file.read_text()
             source = f"plugins/{lua_file.name}"
+            all_entries += parse_default_keymaps(text, source)
             if "copilot" in lua_file.name and "chat" not in lua_file.name:
                 all_entries += parse_copilot_suggestion(text, source)
             else:

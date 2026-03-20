@@ -1,45 +1,54 @@
 # Neovim Keymaps
 
-> 자동 생성: 2026-03-19
+> 자동 생성: 2026-03-20
 > `python3 gen_keymaps.py --nvim-dir /Users/saibi/.config/nvim` 로 재생성
 
 ## Normal Mode
 
-| 키           | 설명                            | 출처                        |
-| ------------ | ------------------------------- | --------------------------- |
-| `-`          | netrw 열기                      | init.lua                    |
-| `<leader>ff` | Telescope find files            | init.lua                    |
-| `<leader>fg` | Telescope live grep             | init.lua                    |
-| `<leader>fb` | Telescope buffers               | init.lua                    |
-| `<leader>fh` | Telescope help tags             | init.lua                    |
-| `<leader>fs` | Telescope LSP document symbols  | init.lua                    |
-| `<leader>fS` | Telescope LSP workspace symbols | init.lua                    |
-| `<leader>ft` | Telescope current buffer tags   | init.lua                    |
-| `<leader>fT` | Telescope project tags          | init.lua                    |
-| `<leader>e`  | —                               | init.lua                    |
-| `g>`         | 다음 진단으로                   | init.lua                    |
-| `g<`         | 이전 진단으로                   | init.lua                    |
-| `gs`         | 파일 확장자 반대 파일 점프      | init.lua                    |
-| `<leader>cc` | Copilot Chat 토글               | plugins/copilot-chat.lua    |
-| `<leader>af` | Cursor agent (float)            | plugins/cursorcli.lua       |
-| `<leader>av` | Cursor agent (vsplit)           | plugins/cursorcli.lua       |
-| `<leader>ah` | Cursor agent (hsplit)           | plugins/cursorcli.lua       |
-| `<leader>as` | Cursor agent 채팅 선택          | plugins/cursorcli.lua       |
-| `<leader>ae` | Cursor agent 에러 수정          | plugins/cursorcli.lua       |
-| `gd`         | 정의로 이동 (LSP)               | plugins/lsp.lua             |
-| `gr`         | 참조 목록 (LSP)                 | plugins/lsp.lua             |
-| `K`          | 호버 정보 (LSP)                 | plugins/lsp.lua             |
-| `<leader>rn` | 이름 변경 (LSP)                 | plugins/lsp.lua             |
-| `gD`         | 선언으로 이동 (LSP)             | plugins/lsp.lua             |
-| `gl`         | 구현으로 이동 (LSP)             | plugins/lsp.lua             |
-| `gh`         | 시그니처 도움말 (LSP)           | plugins/lsp.lua             |
-| `<leader>gh` | —                               | plugins/lsp.lua             |
-| `<leader>mt` | Markdown render toggle          | plugins/render-markdown.lua |
-| `<leader>tc` | Toggle TS Context               | plugins/treesitter.lua      |
-| `[x`         | Jump to context (upward)        | plugins/treesitter.lua      |
-| `<leader>sp` | TS swap next param              | plugins/treesitter.lua      |
-| `<leader>sP` | TS swap prev param              | plugins/treesitter.lua      |
-| `<leader>u`  | —                               | plugins/undotree.lua        |
+| 키                  | 설명                                                               | 출처                        |
+| ------------------- | ------------------------------------------------------------------ | --------------------------- |
+| `-`                 | netrw 열기                                                         | init.lua                    |
+| `<leader>ff`        | Telescope find files                                               | init.lua                    |
+| `<leader>fg`        | Telescope live grep                                                | init.lua                    |
+| `<leader>fb`        | Telescope buffers                                                  | init.lua                    |
+| `<leader>fh`        | Telescope help tags                                                | init.lua                    |
+| `<leader>fs`        | Telescope LSP document symbols                                     | init.lua                    |
+| `<leader>fS`        | Telescope LSP workspace symbols                                    | init.lua                    |
+| `<leader>ft`        | Telescope current buffer tags                                      | init.lua                    |
+| `<leader>fT`        | Telescope project tags                                             | init.lua                    |
+| `<leader>e`         | —                                                                  | init.lua                    |
+| `g>`                | 다음 진단으로                                                      | init.lua                    |
+| `g<`                | 이전 진단으로                                                      | init.lua                    |
+| `gs`                | 파일 확장자 반대 파일 점프                                         | init.lua                    |
+| `gcc`               | Toggles the current line using linewise comment                    | plugins/comment.lua         |
+| `gbc`               | Toggles the current line using blockwise comment                   | plugins/comment.lua         |
+| `[count]gcc`        | Toggles the number of line given as a prefix-count using linewise  | plugins/comment.lua         |
+| `[count]gbc`        | Toggles the number of line given as a prefix-count using blockwise | plugins/comment.lua         |
+| `gc[count]{motion}` | (Op-pending) Toggles the region using linewise comment             | plugins/comment.lua         |
+| `gb[count]{motion}` | (Op-pending) Toggles the region using blockwise comment            | plugins/comment.lua         |
+| `gco`               | Insert comment to the next line and enters INSERT mode             | plugins/comment.lua         |
+| `gcO`               | Insert comment to the previous line and enters INSERT mode         | plugins/comment.lua         |
+| `gcA`               | Insert comment to end of the current line and enters INSERT mode   | plugins/comment.lua         |
+| `<leader>cc`        | Copilot Chat 토글                                                  | plugins/copilot-chat.lua    |
+| `<leader>af`        | Cursor agent (float)                                               | plugins/cursorcli.lua       |
+| `<leader>av`        | Cursor agent (vsplit)                                              | plugins/cursorcli.lua       |
+| `<leader>ah`        | Cursor agent (hsplit)                                              | plugins/cursorcli.lua       |
+| `<leader>as`        | Cursor agent 채팅 선택                                             | plugins/cursorcli.lua       |
+| `<leader>ae`        | Cursor agent 에러 수정                                             | plugins/cursorcli.lua       |
+| `gd`                | 정의로 이동 (LSP)                                                  | plugins/lsp.lua             |
+| `gr`                | 참조 목록 (LSP)                                                    | plugins/lsp.lua             |
+| `K`                 | 호버 정보 (LSP)                                                    | plugins/lsp.lua             |
+| `<leader>rn`        | 이름 변경 (LSP)                                                    | plugins/lsp.lua             |
+| `gD`                | 선언으로 이동 (LSP)                                                | plugins/lsp.lua             |
+| `gl`                | 구현으로 이동 (LSP)                                                | plugins/lsp.lua             |
+| `gh`                | 시그니처 도움말 (LSP)                                              | plugins/lsp.lua             |
+| `<leader>gh`        | —                                                                  | plugins/lsp.lua             |
+| `<leader>mt`        | Markdown render toggle                                             | plugins/render-markdown.lua |
+| `<leader>tc`        | Toggle TS Context                                                  | plugins/treesitter.lua      |
+| `[x`                | Jump to context (upward)                                           | plugins/treesitter.lua      |
+| `<leader>sp`        | TS swap next param                                                 | plugins/treesitter.lua      |
+| `<leader>sP`        | TS swap prev param                                                 | plugins/treesitter.lua      |
+| `<leader>u`         | —                                                                  | plugins/undotree.lua        |
 
 ## Insert Mode
 
@@ -54,9 +63,11 @@
 
 ## Visual Mode
 
-| 키           | 설명                  | 출처                     |
-| ------------ | --------------------- | ------------------------ |
-| `<leader>cq` | 선택 코드에 질문 입력 | plugins/copilot-chat.lua |
+| 키           | 설명                                       | 출처                     |
+| ------------ | ------------------------------------------ | ------------------------ |
+| `gc`         | Toggles the region using linewise comment  | plugins/comment.lua      |
+| `gb`         | Toggles the region using blockwise comment | plugins/comment.lua      |
+| `<leader>cq` | 선택 코드에 질문 입력                      | plugins/copilot-chat.lua |
 
 ## Normal / Visual Mode
 
