@@ -1,6 +1,6 @@
 # Neovim Keymaps
 
-> 자동 생성: 2026-03-24
+> 자동 생성: 2026-03-25
 > `python3 gen_keymaps.py --nvim-dir /home/saibi/.config/nvim` 로 재생성
 
 ## Normal Mode
