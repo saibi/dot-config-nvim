@@ -43,7 +43,6 @@ vim.cmd.colorscheme("lunaperche")
 require ("config.lazy")
 
 
-
 -- keymaps
 local keymap = vim.keymap
 
@@ -70,6 +69,8 @@ keymap.set('n', 'g>', vim.diagnostic.goto_next)
 -- 이전 에러/경고로 이동 (Prev)
 keymap.set('n', 'g<', vim.diagnostic.goto_prev)
 
+-- 경고 float 창 열기
+keymap.set('n', '<leader>gd', vim.diagnostic.open_float)
 
 -- 현재 파일 확장자를 보고 반대 파일로 점프
 vim.keymap.set('n', 'gs', function()
