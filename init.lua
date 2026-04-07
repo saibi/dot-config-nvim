@@ -48,6 +48,19 @@ vim.cmd.colorscheme("lunaperche")
 
 require ("config.lazy")
 
+-- OSC 52: SSH + tmux 환경에서 로컬 클립보드로 복사
+vim.g.clipboard = {
+    name = 'OSC 52',
+    copy = {
+        ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+        ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+    },
+    paste = {
+        ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+        ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+    },
+}
+
 
 -- keymaps
 local keymap = vim.keymap
