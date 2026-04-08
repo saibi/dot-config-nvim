@@ -62,6 +62,54 @@ vim.g.clipboard = {
 }
 
 
+--
+-- 첫줄/중간/마지막줄 라인 번호 표시
+-- 
+local ns_id = vim.api.nvim_create_namespace("ScreenBoundaryNumbers")
+
+local function update_screen_boundary_numbers()
+    local bufnr = vim.api.nvim_get_current_buf()
+    local winid = vim.api.nvim_get_current_win()
+    
+    vim.api.nvim_buf_clear_namespace(bufnr, ns_id, 0, -1)
+
+    local success, win_info = pcall(function() return vim.fn.getwininfo(winid)[1] end)
+    if not success or not win_info then return end
+
+    local top_line = win_info.topline
+    local bot_line = win_info.botline
+    local mid_line = math.floor((top_line + bot_line) / 2)
+    local line_count = vim.api.nvim_buf_line_count(bufnr)
+
+    -- 스타일 설정
+    local opts = {
+        virt_text_pos = 'right_align', -- 화면 오른쪽 끝으로 정렬
+        hl_group = 'NonText',
+    }
+
+    -- 1. 화면 최상단
+    opts.virt_text = {{ "󰜮 Top: " .. top_line, "DiagnosticInfo" }}
+    vim.api.nvim_buf_set_extmark(bufnr, ns_id, top_line - 1, 0, opts)
+
+    -- 2. 화면 중간
+    if mid_line ~= top_line and mid_line ~= bot_line then
+        opts.virt_text = {{ "󰜬 Mid: " .. mid_line, "DiagnosticHint" }}
+        vim.api.nvim_buf_set_extmark(bufnr, ns_id, mid_line - 1, 0, opts)
+    end
+
+    -- 3. 화면 최하단
+    local display_bot = math.min(bot_line, line_count)
+    opts.virt_text = {{ "󰜯 Bot: " .. display_bot, "DiagnosticWarn" }}
+    vim.api.nvim_buf_set_extmark(bufnr, ns_id, display_bot - 1, 0, opts)
+end
+
+vim.api.nvim_create_autocmd({ "WinScrolled", "CursorMoved", "BufEnter", "WinResized" }, {
+    callback = update_screen_boundary_numbers,
+})
+
+
+
+
 -- keymaps
 local keymap = vim.keymap
 
