@@ -169,6 +169,9 @@ end,
 { desc = '파일 확장자 반대 파일 점프' }
 )
 
+-- toggle line number
+vim.keymap.set('n', '<leader>ln', ':set number! relativenumber!<CR>', { desc = 'Toggle All Line Numbers' })
+
 
 -- treesitter 에서 c, cpp 자동 indent 가 잘 안됨. 끄기 
 vim.api.nvim_create_autocmd("FileType", {
